@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include mat_addon *.css
+recursive-include mat_addon *.csv
+recursive-include mat_addon *.html
+recursive-include mat_addon *.ico
+recursive-include mat_addon *.js
+recursive-include mat_addon *.json
+recursive-include mat_addon *.md
+recursive-include mat_addon *.png
+recursive-include mat_addon *.py
+recursive-include mat_addon *.svg
+recursive-include mat_addon *.txt
+recursive-exclude mat_addon *.pyc
