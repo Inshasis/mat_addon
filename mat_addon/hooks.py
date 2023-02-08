@@ -102,13 +102,22 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+	"Customer":{
+        "validate":"mat_addon.mat_addon.doctype.customer.validate_abbr"
+    },
+    "Supplier":{
+        "validate":"mat_addon.mat_addon.doctype.supplier.validate_abbr"
+    },
+    "Employee":{
+        "validate":"mat_addon.mat_addon.doctype.employee.validate_abbr"
+    },
+}
 
 # Scheduled Tasks
 # ---------------
