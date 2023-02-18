@@ -29,3 +29,11 @@ def fetch_item_rate(uom,item_code):
 def fetch_item_name(item_code):
   items1 = frappe.db.sql(f""" SELECT item_name FROM `tabItem Detail` WHERE item='{item_code}' """, as_dict=True)
   return items1  
+
+#KMs 
+@frappe.whitelist()
+def trp_kms(item_code,contract):
+  kms_uom = "TRP (101-150 km)"
+  trp_uom_price = frappe.db.sql(f""" SELECT price FROM `tabItem Detail` WHERE parent='{contract}' AND uom='{kms_uom}' AND item='{item_code}' """, as_dict=True)
+  return trp_uom_price  
+
