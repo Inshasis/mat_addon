@@ -30,6 +30,12 @@ def fetch_item_name(item_code):
   items1 = frappe.db.sql(f""" SELECT item_name FROM `tabItem Detail` WHERE item='{item_code}' """, as_dict=True)
   return items1  
 
+#Total Distance With Rate
+@frappe.whitelist() 
+def total_distance_amount(total_dis):
+  td = int(total_dis) / float(1.9)
+  return td
+
 #KMs 
 @frappe.whitelist()
 def trp_kms(item_code,contract):
